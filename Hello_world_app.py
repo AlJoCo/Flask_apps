@@ -8,9 +8,9 @@ app = Flask(__name__)
 def home():
     return 'Hello, World!'
 
-@app.route(f'/<integer>')
-def number(integer):
-    return integer * integer
+@app.route(f'/<int:number>')
+def square(number):
+    return str(number * number)
 
 if __name__ == "__main__":
     app.run(debug=True)
