@@ -20,8 +20,8 @@ class Customers(db.Model):
 
 class Baskets(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    product_id = db.Column(db.Integer, db.ForeignKey('product.id'), nullable=False)
-    customer_id = db.Column(db.Integer, db.ForeignKey('customer.id'), nullable=False)
+    product_id = db.Column(db.Integer, db.ForeignKey('products_ordered.product_id'), nullable=False)
+    customer_id = db.Column(db.Integer, db.ForeignKey('customers.id'), nullable=False)
 
 if __name__=='__main__':
-    app.run(debug==True, host='0.0.0.0')
+    app.run(debug=True, host='0.0.0.0')
